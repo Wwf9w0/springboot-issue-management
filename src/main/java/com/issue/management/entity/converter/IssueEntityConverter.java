@@ -3,8 +3,10 @@ package com.issue.management.entity.converter;
 import com.issue.management.entity.Issue;
 import com.issue.management.entity.dto.IssueDto;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Component;
 
 @RequiredArgsConstructor
+@Component
 public class IssueEntityConverter {
 
     private final UserEntitiyConverter userEntitiyConverter;

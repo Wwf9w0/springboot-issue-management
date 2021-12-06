@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -39,4 +40,11 @@ public class IssueService {
         });
         return issueDtos;
     }
+
+    public IssueDto getByIdIssue(Long id){
+        Optional<Issue> issue = issueRepository.findById(id);
+        return issueEntityConverter.toDto(issue.get());
+    }
+
+
 }

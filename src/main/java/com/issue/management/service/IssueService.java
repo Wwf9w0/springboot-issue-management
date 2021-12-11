@@ -1,7 +1,6 @@
 package com.issue.management.service;
 
 import com.issue.management.entity.Issue;
-import com.issue.management.entity.User;
 import com.issue.management.entity.converter.IssueEntityConverter;
 import com.issue.management.entity.dto.CreateIssueRequest;
 import com.issue.management.entity.dto.IssueDto;
@@ -11,7 +10,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.Optional;
 
 @Service
@@ -32,7 +30,7 @@ public class IssueService {
     }
 
 
-    public List<IssueDto> getAllIssues(){
+    public List<IssueDto> getAllIssues() {
         List<Issue> issues = issueRepository.findAll();
         List<IssueDto> issueDtos = new ArrayList<>();
         issues.forEach(issue -> {
@@ -41,9 +39,14 @@ public class IssueService {
         return issueDtos;
     }
 
-    public IssueDto getByIdIssue(Long id){
+    public IssueDto getByIdIssue(Long id) {
         Optional<Issue> issue = issueRepository.findById(id);
         return issueEntityConverter.toDto(issue.get());
+    }
+
+    public void deleteIssue(Long id) {
+        Optional<Issue> issueOptional = issueRepository.findById(id);
+        issueRepository.deleteById(issueOptional.get().getId());
     }
 
 

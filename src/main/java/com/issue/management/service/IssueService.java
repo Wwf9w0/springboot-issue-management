@@ -18,7 +18,6 @@ public class IssueService {
 
     private final IssueRepository issueRepository;
     private final IssueEntityConverter issueEntityConverter;
-    private final UserService userService;
 
     public IssueDto save(CreateIssueRequest issueRequest) {
         Issue issue = new Issue();

@@ -37,7 +37,7 @@ public class IssueService {
         return issueDtos;
     }
 
-    public IssueDto getByIdIssue(Long id) {
+    public IssueDto getIssueById(Long id) {
         Optional<Issue> issue = issueRepository.findById(id);
         return issueEntityConverter.toDto(issue.get());
     }

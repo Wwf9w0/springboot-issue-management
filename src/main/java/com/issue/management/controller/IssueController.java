@@ -7,12 +7,10 @@ import com.issue.management.service.IssueService;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequiredArgsConstructor
@@ -30,6 +28,19 @@ public class IssueController {
     @ApiOperation("Get all Issues")
     public ResponseEntity<List<IssueDto>> getAllIssues(){
         return ResponseEntity.ok(issueService.getAllIssues());
+    }
+
+    @GetMapping("/{id}")
+    @ApiOperation("Get Issue By Id")
+    public ResponseEntity<IssueDto> getIssueById(@PathVariable Long id){
+        return ResponseEntity.ok(issueService.getIssueById(id));
+    }
+
+    @DeleteMapping("/{id}")
+    @ApiOperation("Delete Issue By Id")
+    public ResponseEntity<Object> deleteIssue(@PathVariable Long id){
+        issueService.deleteIssue(id);
+       return ResponseEntity.ok().build();
     }
 
 

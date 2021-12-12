@@ -32,5 +32,5 @@ public class IssueController {
         return ResponseEntity.ok(issueService.getAllIssues());
     }
 
-    
+
 }

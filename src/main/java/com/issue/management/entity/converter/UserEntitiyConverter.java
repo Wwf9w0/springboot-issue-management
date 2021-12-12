@@ -11,7 +11,7 @@ public class UserEntitiyConverter {
     public UserDto toDto(User user) {
         return UserDto.builder()
                 .id(user.getId())
-                .fullName(user.getUsername() + user.getUsername())
+                .userName(user.getUsername() + user.getUsername())
                 .build();
     }
 }

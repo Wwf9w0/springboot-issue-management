@@ -10,5 +10,5 @@ import lombok.RequiredArgsConstructor;
 public class UserDto {
 
     private Long id;
-    private String fullName;
+    private String userName;
 }

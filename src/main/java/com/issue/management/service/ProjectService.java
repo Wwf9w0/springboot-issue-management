@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -43,6 +44,13 @@ public class ProjectService {
         return projectDtos;
     }
 
+    public ProjectDto getByIdProject(Long id) {
+        Optional<Project> optionalProject = projectRepository.findById(id);
+        return projectEntityConverter.toDto(optionalProject.get());
+    }
 
-
+    public void deleteProjectById(Long id) {
+        Optional<Project> project = projectRepository.findById(id);
+        projectRepository.deleteById(project.get().getId());
+    }
 }

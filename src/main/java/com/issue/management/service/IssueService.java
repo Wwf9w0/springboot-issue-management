@@ -28,7 +28,6 @@ public class IssueService {
         return issueEntityConverter.toDto(issue);
     }
 
-
     public List<IssueDto> getAllIssues() {
         List<Issue> issues = issueRepository.findAll();
         List<IssueDto> issueDtos = new ArrayList<>();
@@ -47,6 +46,4 @@ public class IssueService {
         Optional<Issue> issueOptional = issueRepository.findById(id);
         issueRepository.deleteById(issueOptional.get().getId());
     }
-
-
 }

@@ -45,7 +45,7 @@ public class ProjectService {
         return projectDtos;
     }
 
-    public ProjectDto getByIdProject(Long id) {
+    public ProjectDto getProjectById(Long id) {
         Optional<Project> optionalProject = projectRepository.findById(id);
         return projectEntityConverter.toDto(optionalProject.get());
     }

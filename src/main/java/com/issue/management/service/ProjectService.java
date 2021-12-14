@@ -2,6 +2,7 @@ package com.issue.management.service;
 
 import com.issue.management.entity.Project;
 import com.issue.management.entity.converter.ProjectEntityConverter;
+import com.issue.management.entity.dto.CreateProjectRequest;
 import com.issue.management.entity.dto.ProjectDto;
 import com.issue.management.repository.ProjectRepository;
 import lombok.RequiredArgsConstructor;
@@ -18,16 +19,16 @@ public class ProjectService {
     private final ProjectEntityConverter projectEntityConverter;
 
 
-    public ProjectDto save(Project project) {
+    public ProjectDto save(CreateProjectRequest request) {
         Project projectCreate = new Project();
-        projectCreate.setId(project.getId());
-        projectCreate.setProjectCode(project.getProjectCode());
-        projectCreate.setProjectName(project.getProjectName());
-        projectCreate.setCreateAt(project.getCreateAt());
-        projectCreate.setCreatedBy(project.getCreatedBy());
-        projectCreate.setManager(project.getManager());
-        projectCreate.setUpdateAt(project.getUpdateAt());
-        projectCreate.setUpdateBy(project.getUpdateBy());
+        projectCreate.setId(request.getId());
+        projectCreate.setProjectCode(request.getProjectCode());
+        projectCreate.setProjectName(request.getProjectName());
+      /*  projectCreate.setCreateAt(request.getCreateAt());
+        projectCreate.setCreatedBy(request.getCreatedBy());
+        projectCreate.setManager(request.getManager());
+        projectCreate.setUpdateAt(request.getUpdateAt());
+        projectCreate.setUpdateBy(request.getUpdateBy());*/
 
         projectRepository.save(projectCreate);
 

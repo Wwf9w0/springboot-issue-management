@@ -18,7 +18,7 @@ import java.util.Optional;
 public class IssueController {
     private final IssueService issueService;
 
-    @GetMapping("/create")
+    @PostMapping("/create")
     @ApiOperation("Create Issue")
     public ResponseEntity<IssueDto> createIssue (@RequestBody CreateIssueRequest createIssueRequest){
         return ResponseEntity.ok(issueService.save(createIssueRequest));

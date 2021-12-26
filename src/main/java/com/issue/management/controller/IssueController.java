@@ -1,6 +1,5 @@
 package com.issue.management.controller;
 
-import com.issue.management.entity.Issue;
 import com.issue.management.entity.dto.CreateIssueRequest;
 import com.issue.management.entity.dto.IssueDto;
 import com.issue.management.service.IssueService;
@@ -10,7 +9,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequiredArgsConstructor

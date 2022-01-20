@@ -1,4 +1,4 @@
-package com.issue.management.configuration.swagger;
+package com.issue.management.configuration;
 
 
 import org.springframework.context.annotation.Bean;
@@ -14,7 +14,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @EnableSwagger2
 @Configuration
-public class SwaggerConfiguration {
+public class Swagger {
 
     @Bean
     public Docket api() {

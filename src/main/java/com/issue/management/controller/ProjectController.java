@@ -41,6 +41,4 @@ public class ProjectController {
         projectService.deleteProjectById(id);
         return ResponseEntity.ok().build();
     }
-
-
 }
